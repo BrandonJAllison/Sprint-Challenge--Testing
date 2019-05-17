@@ -25,8 +25,17 @@ In this challenge use `Test Driven Development` to build a RESTful API using Nod
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 1. In Jest, what are the differences between `describe()` and `it()` globals, and what are good uses for them?
-1. What is the point of `Test Driven Development`? What do you think about this approach?
-1. Mention three types of automated tests.
+
+    Describe() defines the testing suite function whereas it() describes the test itself.  Describe() is used for organizational purposes and helps when reading the tests.  it() is used when writing the tests themselves and is used when talking about the functionality of the test.
+ 
+2. What is the point of `Test Driven Development`? What do you think about this approach?
+
+   Test Driven Development essentially means you write tests before you write your code. It forces you to think of all the edge cases and potential ways the product could break, afterwards writing code that accounts for those tests and acts as somewhat of a safety net when making changes or refactoring your code in the future.  
+
+3. Mention three types of automated tests.
+
+    Three types of automated test could include Unit testing, Integrations testing, and Compinent testing.
+
 
 ## Project Set Up
 
@@ -48,7 +57,7 @@ Below is a product specification covering the requirements for your endpoints.
 
 ### POST /games
 
-- [ ] The `POST /games` endpoint should take in an object that looks like this
+- [x] The `POST /games` endpoint should take in an object that looks like this
 
   ```js
   {
@@ -58,13 +67,13 @@ Below is a product specification covering the requirements for your endpoints.
   }
   ```
 
-- [ ] In the route handler, validate that the required fields are included inside the body. If the information is incomplete, return a `422` status code.
-- [ ] Write tests to verify that the endpoint returns the correct HTTP status code when receiving correct and incorrect game data.
+- [x] In the route handler, validate that the required fields are included inside the body. If the information is incomplete, return a `422` status code.
+- [x] Write tests to verify that the endpoint returns the correct HTTP status code when receiving correct and incorrect game data.
 
 ### GET /games
 
-- [ ] The `GET /games` endpoint should return the list of games and HTTP status code 200.
-- [ ] Write a test to make sure this endpoint always returns an array, even if there are no games stored. If there are no games to return, the endpoint should return an empty array.
+- [x] The `GET /games` endpoint should return the list of games and HTTP status code 200.
+- [x] Write a test to make sure this endpoint always returns an array, even if there are no games stored. If there are no games to return, the endpoint should return an empty array.
 
 ## Stretch Problems
 

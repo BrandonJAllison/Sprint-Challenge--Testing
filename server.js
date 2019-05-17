@@ -35,4 +35,6 @@ server.get("/", (req, res) => {
     res.json({ api: "alive" });
   });
 
+
+  
 module.exports = server;

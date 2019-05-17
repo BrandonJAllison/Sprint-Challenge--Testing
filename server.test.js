@@ -1,15 +1,13 @@
 const request = require("supertest");
 const server = require("./server.js");
 
-
-
 //test for GET route
 describe("GET for '/games' while empty", () => {
     it("should return a status 200", async () => {
         const response = await request(server).get("/games");
         expect(response.status).toBe(200);
     });
-
+    //test for empty game db
     it("should return an empty array if no games in storage", async () => {
         const response = await request(server).get("/games");
         expect(response.body).toEqual([]);
@@ -22,10 +20,12 @@ describe("POST for '/games'", () => {
         const response = await request(server).post("/games").send({invalid: "data"});
         expect(response.status).toBe(422);
     });
+    //test for invalid data
     it("should return an error message if sent invalid data", async () => {
         const response = await request(server).post("/games").send({invalid: "data"});
         expect(response.body.error).toBe("bad game data")
     });
+    //test for sucessful post
     it("should return a status 201 if data posts successfully", async () => {
         const response = await request(server).post("/games").send({
             title: "Sonic the Hedgehog",

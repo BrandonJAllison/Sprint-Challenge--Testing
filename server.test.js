@@ -37,6 +37,28 @@ describe("POST for '/games'", () => {
 
 });
 
+describe('DELETE /games/:id endpoint', () => {
+
+    it('should delete a game from the database', async () => {
+        
+        let response = await request(server)
+        .delete(`/games/2`);
+
+        expect(response.status).toBe(200);
+        
+    });
+
+    it('should return a response with status code 404 when a game was not found in the database', async () => {
+        
+        let response = await request(server)
+        .delete(`/games/10`);
+
+        expect(response.status).toBe(404);
+        
+    });
+
+});
+
 //Test for populated gamesDB
 describe("GET route for '/games' while populated", () => {
     it("should return an array of all games", async () => {
